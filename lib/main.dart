@@ -40,17 +40,19 @@ class MyApp extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(width: double.infinity),
-          _getHeader(),
+          _getMainContent(),
           SizedBox(height: 20),
           _getRowIcons(),
           SizedBox(height: 20),
           _getSkillLables(),
+          SizedBox(height: 20),
+          _getResume(),
         ],
       ),
     );
   }
 
-  Widget _getHeader() {
+  Widget _getMainContent() {
     return Column(
       children: [
         SizedBox(width: double.infinity),
@@ -112,100 +114,74 @@ class MyApp extends StatelessWidget {
     );
   }
 
+  Widget _getResume() {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+      width: double.infinity,
+      color: Color(0xFFE5B299),
+      child: Column(
+        children: [
+          Text(
+            'سابقه‌ی کاری من',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 18.0,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF7D5A50),
+            ),
+          ),
+          _getHistoryColumn()
+        ],
+      ),
+    );
+  }
+
+  Widget _getHistoryColumn() {
+    var list = [
+      'فعالیت در استارتاپ کاردان(flutter)',
+      'طراحی وب سایت آنی میت(React.js)',
+      'طراحی وب سایت رهبیم(React.js)',
+      'طراح سایت ترکی(وردپرس)ArtanRenkli',
+      'طراح سایت اتاق بازرگانی ایران-فنلاند(وردپرس)'
+    ];
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        SizedBox(width: double.infinity, height: 20),
+        for (var title in list)
+          Text(
+            '$title',
+            textDirection: TextDirection.rtl,
+            style: TextStyle(
+                fontSize: 14.0,
+                fontWeight: FontWeight.w300,
+                color: Color(0xFF7D5A50)),
+          ),
+      ],
+    );
+  }
+
   Widget _getSkillLables() {
+    var list = ['HTML5', 'Css3', 'Dart', 'Flutter', 'JavaScript', 'React'];
     return Wrap(
       alignment: WrapAlignment.center,
       children: [
-        Card(
-            elevation: 6,
-            shadowColor: Color(0xFFE5B299),
-            child: Column(
-              children: [
-                Container(
-                  height: 80.0,
-                  width: 80.0,
-                  child: Image(
-                    image: AssetImage('images/html5.png'),
+        for (var skill in list)
+          Card(
+              elevation: 6,
+              shadowColor: Color(0xFFE5B299),
+              child: Column(
+                children: [
+                  Container(
+                    height: 80.0,
+                    width: 80.0,
+                    child: Image(
+                      image: AssetImage('images/$skill.png'),
+                    ),
                   ),
-                ),
-                Text('HTML5')
-              ],
-            )),
-        Card(
-            elevation: 6,
-            shadowColor: Color(0xFFE5B299),
-            child: Column(
-              children: [
-                Container(
-                  height: 80.0,
-                  width: 80.0,
-                  child: Image(
-                    image: AssetImage('images/css3.png'),
-                  ),
-                ),
-                Text('Css3')
-              ],
-            )),
-        Card(
-            elevation: 6,
-            shadowColor: Color(0xFFE5B299),
-            child: Column(
-              children: [
-                Container(
-                  height: 80.0,
-                  width: 80.0,
-                  child: Image(
-                    image: AssetImage('images/JavaScript.png'),
-                  ),
-                ),
-                Text('JavaScript')
-              ],
-            )),
-        Card(
-            elevation: 6,
-            shadowColor: Color(0xFFE5B299),
-            child: Column(
-              children: [
-                Container(
-                  height: 80.0,
-                  width: 80.0,
-                  child: Image(
-                    image: AssetImage('images/React.png'),
-                  ),
-                ),
-                Text('React.js')
-              ],
-            )),
-        Card(
-            elevation: 6,
-            shadowColor: Color(0xFFE5B299),
-            child: Column(
-              children: [
-                Container(
-                  height: 80.0,
-                  width: 80.0,
-                  child: Image(
-                    image: AssetImage('images/flutter.png'),
-                  ),
-                ),
-                Text('flutter')
-              ],
-            )),
-        Card(
-            elevation: 6,
-            shadowColor: Color(0xFFE5B299),
-            child: Column(
-              children: [
-                Container(
-                  height: 80.0,
-                  width: 80.0,
-                  child: Image(
-                    image: AssetImage('images/dart.png'),
-                  ),
-                ),
-                Text('dart')
-              ],
-            ))
+                  Text('$skill')
+                ],
+              )),
       ],
     );
   }
