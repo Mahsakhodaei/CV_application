@@ -1,3 +1,4 @@
+![Screenshot_1651398249](https://user-images.githubusercontent.com/47160014/166141814-1fb66ef8-71d9-4e6c-bb60-935c29ce38d3.png)
 # flutter_cv_application
 
 A new Flutter project.
