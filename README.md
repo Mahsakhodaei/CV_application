@@ -1,4 +1,3 @@
-![Screenshot_1651398249](https://user-images.githubusercontent.com/47160014/166141814-1fb66ef8-71d9-4e6c-bb60-935c29ce38d3.png)
 # flutter_cv_application
 
 A new Flutter project.
@@ -15,3 +14,5 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+<!-- ![Screenshot_1651400561](https://user-images.githubusercontent.com/47160014/166141842-b6331f79-78e4-4ce5-a304-9cafd03409a5.png) -->
+<img src="https://user-images.githubusercontent.com/47160014/166141842-b6331f79-78e4-4ce5-a304-9cafd03409a5.png" width="400"/>
